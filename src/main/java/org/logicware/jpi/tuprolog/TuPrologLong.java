@@ -30,79 +30,67 @@ import org.logicware.jpi.PrologProvider;
 import org.logicware.jpi.PrologTerm;
 
 import alice.tuprolog.Long;
-import alice.tuprolog.Term;
 
 public class TuPrologLong extends TuPrologTerm implements PrologLong {
 
-    TuPrologLong(PrologProvider provider) {
-	super(LONG_TYPE, provider, new Long(0));
-    }
+	TuPrologLong(PrologProvider provider) {
+		super(LONG_TYPE, provider, new Long(0));
+	}
 
-    TuPrologLong(PrologProvider provider, Number value) {
-	super(LONG_TYPE, provider, new Long(value.longValue()));
-    }
+	TuPrologLong(PrologProvider provider, Number value) {
+		super(LONG_TYPE, provider, new Long(value.longValue()));
+	}
 
-    public PrologInteger getPrologInteger() {
-	return new TuPrologInteger(provider, getIntValue());
-    }
+	public PrologInteger getPrologInteger() {
+		return new TuPrologInteger(provider, getIntValue());
+	}
 
-    public PrologFloat getPrologFloat() {
-	return new TuPrologFloat(provider, getFloatValue());
-    }
+	public PrologFloat getPrologFloat() {
+		return new TuPrologFloat(provider, getFloatValue());
+	}
 
-    public PrologDouble getPrologDouble() {
-	return new TuPrologDouble(provider, getDoubleValue());
-    }
+	public PrologDouble getPrologDouble() {
+		return new TuPrologDouble(provider, getDoubleValue());
+	}
 
-    public PrologLong getPrologLong() {
-	return new TuPrologLong(provider, getLongValue());
-    }
+	public PrologLong getPrologLong() {
+		return new TuPrologLong(provider, getLongValue());
+	}
 
-    public long getLongValue() {
-	return ((Long) value).longValue();
-    }
+	public long getLongValue() {
+		return ((Long) value).longValue();
+	}
 
-    public double getDoubleValue() {
-	return ((Long) value).doubleValue();
-    }
+	public double getDoubleValue() {
+		return ((Long) value).doubleValue();
+	}
 
-    public int getIntValue() {
-	return ((Long) value).intValue();
-    }
+	public int getIntValue() {
+		return ((Long) value).intValue();
+	}
 
-    public float getFloatValue() {
-	return ((Long) value).floatValue();
-    }
+	public float getFloatValue() {
+		return ((Long) value).floatValue();
+	}
 
-    @Override
-    public PrologTerm[] getArguments() {
-	return new TuPrologLong[0];
-    }
+	public PrologTerm[] getArguments() {
+		return new TuPrologLong[0];
+	}
 
-    @Override
-    public int getArity() {
-	throw new ArityError(this);
-    }
+	public int getArity() {
+		throw new ArityError(this);
+	}
 
-    @Override
-    public String getFunctor() {
-	throw new FunctorError(this);
-    }
+	public String getFunctor() {
+		throw new FunctorError(this);
+	}
 
-    @Override
-    public String getIndicator() {
-	throw new IndicatorError(this);
-    }
+	public String getIndicator() {
+		throw new IndicatorError(this);
+	}
 
-    @Override
-    public boolean hasIndicator(String functor, int arity) {
-	throw new IndicatorError(this);
-    }
-
-    @Override
-    public PrologTerm clone() {
-	long l = getLongValue();
-	return new TuPrologLong(provider, l);
-    }
+	public boolean hasIndicator(String functor, int arity) {
+		throw new IndicatorError(this);
+	}
 
 }

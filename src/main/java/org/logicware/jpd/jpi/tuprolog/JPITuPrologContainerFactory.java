@@ -27,20 +27,20 @@ import org.logicware.jpi.tuprolog.TuPrologProvider;
 
 public final class JPITuPrologContainerFactory extends JPIContainerFactory {
 
-    public JPITuPrologContainerFactory() {
-	this(new Properties());
-    }
+	public JPITuPrologContainerFactory() {
+		this(new Properties());
+	}
 
-    public JPITuPrologContainerFactory(Properties properties) {
-	super(properties, new TuPrologProvider());
-    }
+	public JPITuPrologContainerFactory(Properties properties) {
+		super(properties, new TuPrologProvider());
+	}
 
-    public JPITuPrologContainerFactory(PrologProvider provider, Properties properties) {
-	super(properties, provider);
-    }
+	public JPITuPrologContainerFactory(PrologProvider provider, Properties properties) {
+		super(properties, provider);
+	}
 
-    public ContainerFactory createContainerFactory() {
-	return this;
-    }
+	public ContainerFactory createContainerFactory() {
+		return this;
+	}
 
 }

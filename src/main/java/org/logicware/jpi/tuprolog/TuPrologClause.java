@@ -25,13 +25,13 @@ import org.logicware.jpi.PrologTerm;
 
 public final class TuPrologClause extends AbstractClause implements PrologClause {
 
-    protected TuPrologClause(PrologTerm head, boolean dynamic, boolean multifile, boolean discontiguous) {
-	super(head, dynamic, multifile, discontiguous);
-    }
+	protected TuPrologClause(PrologTerm head, boolean dynamic, boolean multifile, boolean discontiguous) {
+		super(head, dynamic, multifile, discontiguous);
+	}
 
-    protected TuPrologClause(PrologTerm head, PrologTerm body, boolean dynamic, boolean multifile,
-	    boolean discontiguous) {
-	super(head, body, dynamic, multifile, discontiguous);
-    }
+	protected TuPrologClause(PrologTerm head, PrologTerm body, boolean dynamic, boolean multifile,
+			boolean discontiguous) {
+		super(head, body, dynamic, multifile, discontiguous);
+	}
 
 }

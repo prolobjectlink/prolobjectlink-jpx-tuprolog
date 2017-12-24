@@ -33,75 +33,64 @@ import alice.tuprolog.Int;
 
 public class TuPrologInteger extends TuPrologTerm implements PrologInteger {
 
-    TuPrologInteger(PrologProvider provider) {
-	super(INTEGER_TYPE, provider, new Int(0));
-    }
+	TuPrologInteger(PrologProvider provider) {
+		super(INTEGER_TYPE, provider, new Int(0));
+	}
 
-    TuPrologInteger(PrologProvider provider, Number value) {
-	super(INTEGER_TYPE, provider, new Int(value.intValue()));
-    }
+	TuPrologInteger(PrologProvider provider, Number value) {
+		super(INTEGER_TYPE, provider, new Int(value.intValue()));
+	}
 
-    public PrologInteger getPrologInteger() {
-	return new TuPrologInteger(provider, getIntValue());
-    }
+	public PrologInteger getPrologInteger() {
+		return new TuPrologInteger(provider, getIntValue());
+	}
 
-    public PrologFloat getPrologFloat() {
-	return new TuPrologFloat(provider, getFloatValue());
-    }
+	public PrologFloat getPrologFloat() {
+		return new TuPrologFloat(provider, getFloatValue());
+	}
 
-    public PrologDouble getPrologDouble() {
-	return new TuPrologDouble(provider, getDoubleValue());
-    }
+	public PrologDouble getPrologDouble() {
+		return new TuPrologDouble(provider, getDoubleValue());
+	}
 
-    public PrologLong getPrologLong() {
-	return new TuPrologLong(provider, getLongValue());
-    }
+	public PrologLong getPrologLong() {
+		return new TuPrologLong(provider, getLongValue());
+	}
 
-    public long getLongValue() {
-	return ((Int) value).longValue();
-    }
+	public long getLongValue() {
+		return ((Int) value).longValue();
+	}
 
-    public double getDoubleValue() {
-	return ((Int) value).doubleValue();
-    }
+	public double getDoubleValue() {
+		return ((Int) value).doubleValue();
+	}
 
-    public int getIntValue() {
-	return ((Int) value).intValue();
-    }
+	public int getIntValue() {
+		return ((Int) value).intValue();
+	}
 
-    public float getFloatValue() {
-	return ((Int) value).floatValue();
-    }
+	public float getFloatValue() {
+		return ((Int) value).floatValue();
+	}
 
-    @Override
-    public PrologTerm[] getArguments() {
-	return new TuPrologInteger[0];
-    }
+	public PrologTerm[] getArguments() {
+		return new TuPrologInteger[0];
+	}
 
-    @Override
-    public int getArity() {
-	throw new ArityError(this);
-    }
+	public int getArity() {
+		throw new ArityError(this);
+	}
 
-    @Override
-    public String getFunctor() {
-	throw new FunctorError(this);
-    }
+	public String getFunctor() {
+		throw new FunctorError(this);
+	}
 
-    @Override
-    public String getIndicator() {
-	throw new IndicatorError(this);
-    }
+	public String getIndicator() {
+		throw new IndicatorError(this);
+	}
 
-    @Override
-    public boolean hasIndicator(String functor, int arity) {
-	throw new IndicatorError(this);
-    }
-
-    @Override
-    public PrologTerm clone() {
-	int i = getIntValue();
-	return new TuPrologInteger(provider, i);
-    }
+	public boolean hasIndicator(String functor, int arity) {
+		throw new IndicatorError(this);
+	}
 
 }

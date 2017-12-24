@@ -28,95 +28,86 @@ import alice.tuprolog.Term;
 
 public class TuPrologStructure extends TuPrologTerm implements PrologStructure {
 
-    protected TuPrologStructure(PrologProvider provider, String functor, PrologTerm... arguments) {
-	super(STRUCTURE_TYPE, provider);
-	Term[] terms = new Term[arguments.length];
-	for (int i = 0; i < arguments.length; i++) {
-	    terms[i] = unwrap(arguments[i], TuPrologTerm.class).value;
+	protected TuPrologStructure(PrologProvider provider, String functor, PrologTerm... arguments) {
+		super(STRUCTURE_TYPE, provider);
+		Term[] terms = new Term[arguments.length];
+		for (int i = 0; i < arguments.length; i++) {
+			terms[i] = unwrap(arguments[i], TuPrologTerm.class).value;
+		}
+		value = new Struct(removeQuoted(functor), terms);
 	}
-	value = new Struct(removeQuoted(functor), terms);
-    }
 
-    protected TuPrologStructure(PrologProvider provider, String functor, Term... arguments) {
-	super(STRUCTURE_TYPE, provider, new Struct(removeQuoted(functor), arguments));
-    }
-
-    private static final boolean isQuoted(String functor) {
-	if (!functor.isEmpty()) {
-	    char beginChar = functor.charAt(0);
-	    char endChar = functor.charAt(functor.length() - 1);
-	    return beginChar == '\'' && endChar == '\'';
+	protected TuPrologStructure(PrologProvider provider, String functor, Term... arguments) {
+		super(STRUCTURE_TYPE, provider, new Struct(removeQuoted(functor), arguments));
 	}
-	return false;
-    }
 
-    private static final String removeQuoted(String functor) {
-	if (isQuoted(functor)) {
-	    String newFunctor = "";
-	    newFunctor += functor.substring(1, functor.length() - 1);
-	    return newFunctor;
+	TuPrologStructure(PrologProvider provider, PrologTerm left, String operator, PrologTerm right) {
+		super(STRUCTURE_TYPE, provider);
+		Term leftOperand = left.unwrap(TuPrologTerm.class).value;
+		Term rightOperand = right.unwrap(TuPrologTerm.class).value;
+		value = new Struct(operator, new Term[] { leftOperand, rightOperand });
 	}
-	return functor;
-    }
 
-    private final void checkIndexOutOfBound(int index, int lenght) {
-	if (index < 0 || index > lenght) {
-	    throw new ArrayIndexOutOfBoundsException(index);
+	TuPrologStructure(PrologProvider provider, Term left, String functor, Term right) {
+		super(STRUCTURE_TYPE, provider, new Struct(functor, new Term[] { left, right }));
 	}
-    }
 
-    // public final JTree[] unwrapArray(PrologTerm[] terms) {
-    // Term[] ks = new Term[terms.length];
-    // for (int i = 0; i < terms.length; i++) {
-    // ks[i]=
-    // }
-    // return ;
-    // }
-
-    public PrologTerm getArgument(int index) {
-	PrologTerm[] arguments = getArguments();
-	checkIndexOutOfBound(index, arguments.length);
-	return arguments[index];
-    }
-
-    @Override
-    public PrologTerm[] getArguments() {
-	Struct structure = (Struct) value;
-	int arity = structure.getArity();
-	PrologTerm[] arguments = new PrologTerm[arity];
-	for (int i = 0; i < arity; i++) {
-	    arguments[i] = provider.toTerm(structure.getArg(i), PrologTerm.class);
+	private static final boolean isQuoted(String functor) {
+		if (!functor.isEmpty()) {
+			char beginChar = functor.charAt(0);
+			char endChar = functor.charAt(functor.length() - 1);
+			return beginChar == '\'' && endChar == '\'';
+		}
+		return false;
 	}
-	return arguments;
-    }
 
-    @Override
-    public int getArity() {
-	Struct structure = (Struct) value;
-	return structure.getArity();
-    }
+	private static final String removeQuoted(String functor) {
+		if (isQuoted(functor)) {
+			String newFunctor = "";
+			newFunctor += functor.substring(1, functor.length() - 1);
+			return newFunctor;
+		}
+		return functor;
+	}
 
-    @Override
-    public String getFunctor() {
-	Struct structure = (Struct) value;
-	return structure.getName();
-    }
+	private final void checkIndexOutOfBound(int index, int lenght) {
+		if (index < 0 || index > lenght) {
+			throw new ArrayIndexOutOfBoundsException(index);
+		}
+	}
 
-    @Override
-    public String getIndicator() {
-	return getFunctor() + "/" + getArity();
-    }
+	public PrologTerm getArgument(int index) {
+		PrologTerm[] arguments = getArguments();
+		checkIndexOutOfBound(index, arguments.length);
+		return arguments[index];
+	}
 
-    @Override
-    public boolean hasIndicator(String functor, int arity) {
-	return getFunctor().equals(functor) && getArity() == arity;
-    }
+	public PrologTerm[] getArguments() {
+		Struct structure = (Struct) value;
+		int arity = structure.getArity();
+		PrologTerm[] arguments = new PrologTerm[arity];
+		for (int i = 0; i < arity; i++) {
+			arguments[i] = provider.toTerm(structure.getArg(i), PrologTerm.class);
+		}
+		return arguments;
+	}
 
-    @Override
-    public PrologTerm clone() {
-	String f = getFunctor();
-	PrologTerm[] a = getArguments();
-	return new TuPrologStructure(provider, f, a);
-    }
+	public int getArity() {
+		Struct structure = (Struct) value;
+		return structure.getArity();
+	}
+
+	public String getFunctor() {
+		Struct structure = (Struct) value;
+		return structure.getName();
+	}
+
+	public String getIndicator() {
+		return getFunctor() + "/" + getArity();
+	}
+
+	public boolean hasIndicator(String functor, int arity) {
+		return getFunctor().equals(functor) && getArity() == arity;
+	}
 
 }

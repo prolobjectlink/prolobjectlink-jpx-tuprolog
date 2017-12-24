@@ -27,38 +27,33 @@ import alice.tuprolog.Struct;
 
 public class TuPrologEmpty extends TuPrologList implements PrologList {
 
-    TuPrologEmpty(PrologProvider provider) {
-	super(provider);
-    }
+	TuPrologEmpty(PrologProvider provider) {
+		super(provider);
+	}
 
-    @Override
-    public PrologTerm[] getArguments() {
-	return new PrologTerm[0];
-    }
+	@Override
+	public PrologTerm[] getArguments() {
+		return new PrologTerm[0];
+	}
 
-    @Override
-    public int getArity() {
-	return ((Struct) value).getArity();
-    }
+	@Override
+	public int getArity() {
+		return ((Struct) value).getArity();
+	}
 
-    @Override
-    public String getFunctor() {
-	return ((Struct) value).getName();
-    }
+	@Override
+	public String getFunctor() {
+		return ((Struct) value).getName();
+	}
 
-    @Override
-    public String getIndicator() {
-	return getFunctor() + "/" + getArity();
-    }
+	@Override
+	public String getIndicator() {
+		return getFunctor() + "/" + getArity();
+	}
 
-    @Override
-    public boolean hasIndicator(String functor, int arity) {
-	return getFunctor().equals(functor) && getArity() == arity;
-    }
-
-    @Override
-    public PrologTerm clone() {
-	return new TuPrologEmpty(provider);
-    }
+	@Override
+	public boolean hasIndicator(String functor, int arity) {
+		return getFunctor().equals(functor) && getArity() == arity;
+	}
 
 }

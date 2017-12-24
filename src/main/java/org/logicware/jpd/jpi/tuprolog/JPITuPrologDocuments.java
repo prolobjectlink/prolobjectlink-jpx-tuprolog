@@ -29,24 +29,22 @@ import org.logicware.jpi.tuprolog.TuPrologProvider;
 
 public final class JPITuPrologDocuments extends JPIDocuments {
 
-    static final Documents instance = new JPITuPrologDocuments();
+	static final Documents instance = new JPITuPrologDocuments();
 
-    protected JPITuPrologDocuments() {
-	super(new Properties(), new TuPrologProvider());
-    }
+	protected JPITuPrologDocuments() {
+		super(new Properties(), new TuPrologProvider());
+	}
 
-    @Override
-    public Documents getInstance() {
-	return instance;
-    }
+	public Documents getInstance() {
+		return instance;
+	}
 
-    public Cache createCache() {
-	return new JPICache(getProvider());
-    }
+	public Cache createCache() {
+		return new JPICache(getProvider());
+	}
 
-    @Override
-    public ContainerFactory createContainerFactory() {
-	return new JPITuPrologContainerFactory(getProvider(), getProperties());
-    }
+	public ContainerFactory createContainerFactory() {
+		return new JPITuPrologContainerFactory(getProvider(), getProperties());
+	}
 
 }

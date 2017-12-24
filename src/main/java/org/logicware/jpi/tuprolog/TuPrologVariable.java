@@ -30,59 +30,48 @@ import alice.tuprolog.Var;
 
 public class TuPrologVariable extends TuPrologTerm implements PrologVariable {
 
-    TuPrologVariable(PrologProvider provider) {
-	super(VARIABLE_TYPE, provider, new Var());
-    }
+	TuPrologVariable(PrologProvider provider) {
+		super(VARIABLE_TYPE, provider, new Var());
+	}
 
-    public TuPrologVariable(PrologProvider provider, String name) {
-	super(VARIABLE_TYPE, provider, new Var(name));
-    }
+	public TuPrologVariable(PrologProvider provider, String name) {
+		super(VARIABLE_TYPE, provider, new Var(name));
+	}
 
-    public boolean isAnonymous() {
-	return ((Var) value).isAnonymous();
-    }
+	public boolean isAnonymous() {
+		return ((Var) value).isAnonymous();
+	}
 
-    public String getName() {
-	return ((Var) value).getName();
-    }
+	public String getName() {
+		return ((Var) value).getName();
+	}
 
-    public void setName(String name) {
-	this.value = new Var(name);
-    }
+	public void setName(String name) {
+		this.value = new Var(name);
+	}
 
-    @Override
-    public PrologTerm[] getArguments() {
-	return new TuPrologVariable[0];
-    }
+	public PrologTerm[] getArguments() {
+		return new TuPrologVariable[0];
+	}
 
-    @Override
-    public int getArity() {
-	throw new ArityError(this);
-    }
+	public int getArity() {
+		throw new ArityError(this);
+	}
 
-    @Override
-    public String getFunctor() {
-	throw new FunctorError(this);
-    }
+	public String getFunctor() {
+		throw new FunctorError(this);
+	}
 
-    @Override
-    public String getIndicator() {
-	throw new IndicatorError(this);
-    }
+	public String getIndicator() {
+		throw new IndicatorError(this);
+	}
 
-    @Override
-    public boolean hasIndicator(String functor, int arity) {
-	throw new IndicatorError(this);
-    }
+	public boolean hasIndicator(String functor, int arity) {
+		throw new IndicatorError(this);
+	}
 
-    public int getPosition() {
-	throw new UnsupportedOperationException("getPosition()");
-    }
-
-    @Override
-    public PrologTerm clone() {
-	String n = getName();
-	return new TuPrologVariable(provider, n);
-    }
+	public int getPosition() {
+		throw new UnsupportedOperationException("getPosition()");
+	}
 
 }
