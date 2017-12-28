@@ -172,7 +172,7 @@ public class TuPrologProvider extends AbstractProvider implements PrologProvider
 		return new TuPrologStructure(this, functor, arguments);
 	}
 
-	public PrologTerm newExpression(PrologTerm left, String operator, PrologTerm right) {
+	public PrologTerm newStructure(PrologTerm left, String operator, PrologTerm right) {
 		return new TuPrologStructure(this, left, operator, right);
 	}
 
