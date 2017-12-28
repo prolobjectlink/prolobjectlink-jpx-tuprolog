@@ -24,7 +24,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Enumeration;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -301,7 +300,7 @@ public final class TuPrologEngine extends JavaEngine implements PrologEngine {
 		return operators;
 	}
 
-	public Enumeration<PrologClause> getProgramClauses() {
+	public Iterator<PrologClause> getProgramIterator() {
 		Collection<PrologClause> cls = new LinkedList<PrologClause>();
 		Parser parser = new Parser(engine.getTheoryManager().getTheory(true));
 		for (Iterator<Term> iterator = parser.iterator(); iterator.hasNext();) {
@@ -318,7 +317,7 @@ public final class TuPrologEngine extends JavaEngine implements PrologEngine {
 				}
 			}
 		}
-		return new TuPrologClauseEnum(cls);
+		return new PrologProgramIterator(cls);
 	}
 
 	public String getLicense() {
