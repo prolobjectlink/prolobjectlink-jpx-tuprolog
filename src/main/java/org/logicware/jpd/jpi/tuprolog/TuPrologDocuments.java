@@ -23,15 +23,15 @@ import org.logicware.jpd.Cache;
 import org.logicware.jpd.ContainerFactory;
 import org.logicware.jpd.Documents;
 import org.logicware.jpd.Properties;
-import org.logicware.jpd.jpi.JPICache;
-import org.logicware.jpd.jpi.JPIDocuments;
+import org.logicware.jpd.jpi.PrologCache;
+import org.logicware.jpd.jpi.PrologDocuments;
 import org.logicware.jpi.tuprolog.TuPrologProvider;
 
-public final class JPITuPrologDocuments extends JPIDocuments {
+public final class TuPrologDocuments extends PrologDocuments {
 
-	static final Documents instance = new JPITuPrologDocuments();
+	static final Documents instance = new TuPrologDocuments();
 
-	protected JPITuPrologDocuments() {
+	protected TuPrologDocuments() {
 		super(new Properties(), new TuPrologProvider());
 	}
 
@@ -40,11 +40,11 @@ public final class JPITuPrologDocuments extends JPIDocuments {
 	}
 
 	public Cache createCache() {
-		return new JPICache(getProvider());
+		return new PrologCache(getProvider());
 	}
 
 	public ContainerFactory createContainerFactory() {
-		return new JPITuPrologContainerFactory(getProvider(), getProperties());
+		return new TuPrologContainerFactory(getProvider(), getProperties());
 	}
 
 }

@@ -21,21 +21,21 @@ package org.logicware.jpd.jpi.tuprolog;
 
 import org.logicware.jpd.ContainerFactory;
 import org.logicware.jpd.Properties;
-import org.logicware.jpd.jpi.JPIContainerFactory;
+import org.logicware.jpd.jpi.PrologContainerFactory;
 import org.logicware.jpi.PrologProvider;
 import org.logicware.jpi.tuprolog.TuPrologProvider;
 
-public final class JPITuPrologContainerFactory extends JPIContainerFactory {
+public final class TuPrologContainerFactory extends PrologContainerFactory {
 
-	public JPITuPrologContainerFactory() {
+	public TuPrologContainerFactory() {
 		this(new Properties());
 	}
 
-	public JPITuPrologContainerFactory(Properties properties) {
+	public TuPrologContainerFactory(Properties properties) {
 		super(properties, new TuPrologProvider());
 	}
 
-	public JPITuPrologContainerFactory(PrologProvider provider, Properties properties) {
+	public TuPrologContainerFactory(PrologProvider provider, Properties properties) {
 		super(properties, provider);
 	}
 

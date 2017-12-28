@@ -22,14 +22,14 @@ package org.logicware.jpd.jpi.tuprolog;
 import org.logicware.jpd.ContainerFactory;
 import org.logicware.jpd.Containers;
 import org.logicware.jpd.Properties;
-import org.logicware.jpd.jpi.JPIContainers;
+import org.logicware.jpd.jpi.PrologContainers;
 import org.logicware.jpi.tuprolog.TuPrologProvider;
 
-public final class JPITuPrologContainers extends JPIContainers {
+public final class TuPrologContainers extends PrologContainers {
 
-	static final Containers instance = new JPITuPrologContainers();
+	static final Containers instance = new TuPrologContainers();
 
-	protected JPITuPrologContainers() {
+	protected TuPrologContainers() {
 		super(new Properties(), new TuPrologProvider());
 	}
 
@@ -38,7 +38,7 @@ public final class JPITuPrologContainers extends JPIContainers {
 	}
 
 	public ContainerFactory createContainerFactory() {
-		return new JPITuPrologContainerFactory(getProvider(), getProperties());
+		return new TuPrologContainerFactory(getProvider(), getProperties());
 	}
 
 }
