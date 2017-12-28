@@ -30,7 +30,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.logicware.jpi.JavaEngine;
+import org.logicware.jpi.AbstractEngine;
 import org.logicware.jpi.Licenses;
 import org.logicware.jpi.OperatorEntry;
 import org.logicware.jpi.PredicateIndicator;
@@ -55,7 +55,7 @@ import alice.tuprolog.Term;
 import alice.tuprolog.Theory;
 import alice.tuprolog.TheoryManager;
 
-public final class TuPrologEngine extends JavaEngine implements PrologEngine {
+public final class TuPrologEngine extends AbstractEngine implements PrologEngine {
 
 	final Prolog engine;
 
@@ -300,7 +300,7 @@ public final class TuPrologEngine extends JavaEngine implements PrologEngine {
 		return operators;
 	}
 
-	public Iterator<PrologClause> getProgramIterator() {
+	public Iterator<PrologClause> iterator() {
 		Collection<PrologClause> cls = new LinkedList<PrologClause>();
 		Parser parser = new Parser(engine.getTheoryManager().getTheory(true));
 		for (Iterator<Term> iterator = parser.iterator(); iterator.hasNext();) {
