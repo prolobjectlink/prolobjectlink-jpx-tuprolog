@@ -19,6 +19,8 @@
  */
 package org.logicware.jpi.tuprolog;
 
+import static org.logicware.jpi.PrologTermType.STRUCTURE_TYPE;
+
 import org.logicware.jpi.PrologProvider;
 import org.logicware.jpi.PrologStructure;
 import org.logicware.jpi.PrologTerm;

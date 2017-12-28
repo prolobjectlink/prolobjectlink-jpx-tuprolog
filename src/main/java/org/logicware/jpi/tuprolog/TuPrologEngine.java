@@ -359,14 +359,12 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 		if (getClass() != obj.getClass())
 			return false;
 		TuPrologEngine other = (TuPrologEngine) obj;
-		if (engine == null && other.engine != null) {
-			return false;
-		}
 
 		// we need some criteria for engines compare
 		// tu-prolog engine not override equals from object
+		// current criteria is not null engine instances
 
-		return true;
+		return engine != null && other.engine != null;
 	}
 
 	public void dispose() {

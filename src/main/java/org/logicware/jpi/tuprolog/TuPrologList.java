@@ -19,6 +19,8 @@
  */
 package org.logicware.jpi.tuprolog;
 
+import static org.logicware.jpi.PrologTermType.LIST_TYPE;
+
 import java.util.Iterator;
 
 import org.logicware.jpi.PrologList;
