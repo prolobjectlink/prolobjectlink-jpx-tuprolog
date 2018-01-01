@@ -21,17 +21,19 @@ package org.logicware.jpi.tuprolog;
 
 import org.logicware.jpi.AbstractClause;
 import org.logicware.jpi.PrologClause;
+import org.logicware.jpi.PrologProvider;
 import org.logicware.jpi.PrologTerm;
 
 public final class TuPrologClause extends AbstractClause implements PrologClause {
 
-	protected TuPrologClause(PrologTerm head, boolean dynamic, boolean multifile, boolean discontiguous) {
-		super(head, dynamic, multifile, discontiguous);
+	protected TuPrologClause(PrologProvider provider, PrologTerm head, boolean dynamic, boolean multifile,
+			boolean discontiguous) {
+		super(provider, head, dynamic, multifile, discontiguous);
 	}
 
-	protected TuPrologClause(PrologTerm head, PrologTerm body, boolean dynamic, boolean multifile,
-			boolean discontiguous) {
-		super(head, body, dynamic, multifile, discontiguous);
+	protected TuPrologClause(PrologProvider provider, PrologTerm head, PrologTerm body, boolean dynamic,
+			boolean multifile, boolean discontiguous) {
+		super(provider, head, body, dynamic, multifile, discontiguous);
 	}
 
 }
