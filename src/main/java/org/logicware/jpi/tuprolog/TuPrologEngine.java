@@ -19,6 +19,11 @@
  */
 package org.logicware.jpi.tuprolog;
 
+import static org.logicware.LoggerConstants.DONT_WORRY;
+import static org.logicware.LoggerConstants.FILE_ERROR;
+import static org.logicware.LoggerConstants.FILE_NOT_FOUND;
+import static org.logicware.LoggerConstants.SYNTAX_ERROR;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
@@ -30,7 +35,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.logicware.LoggerConstants;
 import org.logicware.LoggerUtils;
 import org.logicware.jpi.AbstractEngine;
 import org.logicware.jpi.Licenses;
@@ -60,11 +64,11 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 
 	final Prolog engine;
 
-	TuPrologEngine(PrologProvider provider) {
+	protected TuPrologEngine(PrologProvider provider) {
 		this(provider, new Prolog());
 	}
 
-	TuPrologEngine(PrologProvider provider, Prolog engine) {
+	protected TuPrologEngine(PrologProvider provider, Prolog engine) {
 		super(provider);
 		this.engine = engine;
 	}
@@ -74,13 +78,13 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			Theory theory = new Theory(new FileInputStream(path));
 			engine.setTheory(theory);
 		} catch (FileNotFoundException e) {
-			LoggerUtils.warn(getClass(), LoggerConstants.FILE_NOT_FOUND + path, e);
-			LoggerUtils.info(getClass(), LoggerConstants.DONT_WORRY + path);
+			LoggerUtils.warn(getClass(), FILE_NOT_FOUND + path, e);
+			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), LoggerConstants.FILE_ERROR + path, e);
-			LoggerUtils.info(getClass(), LoggerConstants.DONT_WORRY + path);
+			LoggerUtils.warn(getClass(), FILE_ERROR + path, e);
+			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR + path, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
 		}
 	}
 
@@ -90,15 +94,15 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			writer = new FileWriter(path);
 			writer.write(engine.getTheoryManager().getTheory(true));
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), LoggerConstants.FILE_ERROR + path, e);
-			LoggerUtils.info(getClass(), LoggerConstants.DONT_WORRY + path);
+			LoggerUtils.warn(getClass(), FILE_ERROR + path, e);
+			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} finally {
 			try {
 				if (writer != null) {
 					writer.close();
 				}
 			} catch (IOException e) {
-				LoggerUtils.error(getClass(), LoggerConstants.FILE_ERROR + path, e);
+				LoggerUtils.error(getClass(), FILE_ERROR + path, e);
 			}
 		}
 	}
@@ -108,11 +112,11 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 		try {
 			manager.consult(new Theory(new FileInputStream(path)), true, null);
 		} catch (FileNotFoundException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.FILE_NOT_FOUND + path, e);
+			LoggerUtils.error(getClass(), FILE_NOT_FOUND + path, e);
 		} catch (IOException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.FILE_ERROR + path, e);
+			LoggerUtils.error(getClass(), FILE_ERROR + path, e);
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR + path, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
 		}
 	}
 
@@ -134,7 +138,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 				}
 			}
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR, e);
 		}
 		manager.assertA((Struct) Term.createTerm(stringClause), true, null, false);
 	}
@@ -160,7 +164,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 				}
 			}
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR, e);
 		}
 		manager.assertZ((Struct) Term.createTerm(stringClause), true, null, false);
 	}
@@ -186,7 +190,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 				}
 			}
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR, e);
 		}
 		return false;
 	}
@@ -203,7 +207,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 				}
 			}
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR, e);
 		}
 		return false;
 
@@ -285,7 +289,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 				}
 			}
 		} catch (InvalidTheoryException e) {
-			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
+			LoggerUtils.error(getClass(), SYNTAX_ERROR, e);
 		}
 
 		return builtins;
