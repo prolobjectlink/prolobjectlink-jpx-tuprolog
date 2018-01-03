@@ -35,10 +35,6 @@ import alice.tuprolog.Long;
 
 public class TuPrologLong extends TuPrologTerm implements PrologLong {
 
-	TuPrologLong(PrologProvider provider) {
-		super(LONG_TYPE, provider, new Long(0));
-	}
-
 	TuPrologLong(PrologProvider provider, Number value) {
 		super(LONG_TYPE, provider, new Long(value.longValue()));
 	}

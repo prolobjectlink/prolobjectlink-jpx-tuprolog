@@ -40,6 +40,7 @@ import alice.tuprolog.Var;
 public abstract class TuPrologTerm extends AbstractTerm implements PrologTerm {
 
 	protected Term value;
+	protected static final Prolog prolog = new Prolog();
 
 	public TuPrologTerm(int type, PrologProvider provider) {
 		super(type, provider);
@@ -79,11 +80,7 @@ public abstract class TuPrologTerm extends AbstractTerm implements PrologTerm {
 	}
 
 	public final boolean isList() {
-		return value.isList()
-
-				||
-
-				value.isEmptyList();
+		return value.isList();
 	}
 
 	public final boolean isStructure() {
@@ -106,7 +103,6 @@ public abstract class TuPrologTerm extends AbstractTerm implements PrologTerm {
 
 	public final boolean isEvaluable() {
 		if (value instanceof Struct) {
-			Prolog prolog = new Prolog();
 			OperatorManager om = prolog.getOperatorManager();
 			List<Operator> ol = om.getOperators();
 			for (Operator operator : ol) {
@@ -165,7 +161,7 @@ public abstract class TuPrologTerm extends AbstractTerm implements PrologTerm {
 		if (value == null) {
 			if (other.value != null)
 				return false;
-		} else if (!value.equals(other.value))
+		} else if (!value.unify(prolog, other.value))
 			return false;
 		return true;
 	}

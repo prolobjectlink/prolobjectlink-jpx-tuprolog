@@ -35,10 +35,6 @@ import alice.tuprolog.Int;
 
 public class TuPrologInteger extends TuPrologTerm implements PrologInteger {
 
-	TuPrologInteger(PrologProvider provider) {
-		super(INTEGER_TYPE, provider, new Int(0));
-	}
-
 	TuPrologInteger(PrologProvider provider, Number value) {
 		super(INTEGER_TYPE, provider, new Int(value.intValue()));
 	}

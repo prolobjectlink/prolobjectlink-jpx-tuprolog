@@ -35,10 +35,6 @@ import alice.tuprolog.Float;
 
 public final class TuPrologFloat extends TuPrologTerm implements PrologFloat {
 
-	TuPrologFloat(PrologProvider provider) {
-		super(FLOAT_TYPE, provider, new Float(0));
-	}
-
 	TuPrologFloat(PrologProvider provider, Number value) {
 		super(FLOAT_TYPE, provider, new Float(value.floatValue()));
 	}

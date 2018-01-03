@@ -19,10 +19,10 @@
  */
 package org.logicware.jpi.tuprolog;
 
-import static org.logicware.LoggerConstants.DONT_WORRY;
-import static org.logicware.LoggerConstants.FILE_ERROR;
-import static org.logicware.LoggerConstants.FILE_NOT_FOUND;
-import static org.logicware.LoggerConstants.SYNTAX_ERROR;
+import static org.logicware.logging.LoggerConstants.DONT_WORRY;
+import static org.logicware.logging.LoggerConstants.FILE_NOT_FOUND;
+import static org.logicware.logging.LoggerConstants.IO_ERROR;
+import static org.logicware.logging.LoggerConstants.SYNTAX_ERROR;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,7 +35,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.logicware.LoggerUtils;
 import org.logicware.jpi.AbstractEngine;
 import org.logicware.jpi.Licenses;
 import org.logicware.jpi.OperatorEntry;
@@ -47,10 +46,13 @@ import org.logicware.jpi.PrologOperator;
 import org.logicware.jpi.PrologProvider;
 import org.logicware.jpi.PrologQuery;
 import org.logicware.jpi.PrologTerm;
+import org.logicware.jpi.SyntaxError;
+import org.logicware.logging.LoggerUtils;
 
 import alice.tuprolog.Int;
 import alice.tuprolog.InvalidTheoryException;
 import alice.tuprolog.Library;
+import alice.tuprolog.MalformedGoalException;
 import alice.tuprolog.Operator;
 import alice.tuprolog.Parser;
 import alice.tuprolog.PrimitiveInfo;
@@ -81,7 +83,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			LoggerUtils.warn(getClass(), FILE_NOT_FOUND + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), FILE_ERROR + path, e);
+			LoggerUtils.warn(getClass(), IO_ERROR + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (InvalidTheoryException e) {
 			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
@@ -94,7 +96,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			writer = new FileWriter(path);
 			writer.write(engine.getTheoryManager().getTheory(true));
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), FILE_ERROR + path, e);
+			LoggerUtils.warn(getClass(), IO_ERROR + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} finally {
 			try {
@@ -102,7 +104,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 					writer.close();
 				}
 			} catch (IOException e) {
-				LoggerUtils.error(getClass(), FILE_ERROR + path, e);
+				LoggerUtils.error(getClass(), IO_ERROR + path, e);
 			}
 		}
 	}
@@ -114,7 +116,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 		} catch (FileNotFoundException e) {
 			LoggerUtils.error(getClass(), FILE_NOT_FOUND + path, e);
 		} catch (IOException e) {
-			LoggerUtils.error(getClass(), FILE_ERROR + path, e);
+			LoggerUtils.error(getClass(), IO_ERROR + path, e);
 		} catch (InvalidTheoryException e) {
 			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
 		}
@@ -214,12 +216,15 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 	}
 
 	public void retract(String stringClause) {
-		TheoryManager manager = engine.getTheoryManager();
-		manager.retract((Struct) Term.createTerm(stringClause));
+		try {
+			engine.solve("retract(" + stringClause + ").");
+		} catch (MalformedGoalException e) {
+			throw new SyntaxError("Syntax error", e);
+		}
 	}
 
 	public void retract(PrologTerm head, PrologTerm... body) {
-		engine.getTheoryManager().retract(fromTerm(head, body, Struct.class));
+		retract("" + fromTerm(head, body, Struct.class) + "");
 	}
 
 	public PrologQuery query(String stringQuery) {
