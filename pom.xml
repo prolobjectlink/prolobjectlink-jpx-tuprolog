@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.logicware</groupId>
-	<artifactId>prolobjectlink-tuprolog</artifactId>
+	<artifactId>prolobjectlink-db-tuprolog</artifactId>
 	<version>1.0.0</version>
 	<name>prolobjectlink-tuprolog</name>
 	<description>prolobjectlink-tuprolog</description>
@@ -51,15 +51,12 @@
 		<downloadUrl>http://www.logicware.org/download</downloadUrl>
 	</distributionManagement>
 
-	<properties>
-		<project.version>1.0.0</project.version>
-	</properties>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.logicware</groupId>
-			<artifactId>prolobjectlink</artifactId>
-			<version>${project.version}</version>
+			<artifactId>prolobjectlink-db</artifactId>
+			<version>[1.0.0, )</version>
 		</dependency>
 		<dependency>
 			<groupId>it.unibo.alice.tuprolog</groupId>

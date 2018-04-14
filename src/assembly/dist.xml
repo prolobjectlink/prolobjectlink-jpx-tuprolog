@@ -19,6 +19,18 @@
 			</includes>
 		</fileSet>
 
+		<!-- binary script folder -->
+		<fileSet>
+			<directory>${project.basedir}/bin</directory>
+			<outputDirectory>bin</outputDirectory>
+		</fileSet>
+
+		<!-- root data folder -->
+		<fileSet>
+			<directory>${project.basedir}/dat</directory>
+			<outputDirectory>dat</outputDirectory>
+		</fileSet>
+
 		<!-- documentation and api documentation -->
 		<fileSet>
 			<directory>${project.build.directory}/apidocs</directory>
@@ -46,17 +58,6 @@
 
 	</fileSets>
 	<dependencySets>
-		<dependencySet>
-			<outputDirectory>bin</outputDirectory>
-			<scope>runtime</scope>
-		</dependencySet>
-		<dependencySet>
-			<outputDirectory>bin</outputDirectory>
-			<scope>system</scope>
-			<excludes>
-				<exclude>${project.groupId}:${project.artifactId}</exclude>
-			</excludes>
-		</dependencySet>
 		<dependencySet>
 			<outputDirectory>lib</outputDirectory>
 			<scope>runtime</scope>
