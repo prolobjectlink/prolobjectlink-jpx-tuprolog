@@ -25,6 +25,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.logicware.logging.LoggerConstants;
+import org.logicware.logging.LoggerUtils;
 import org.logicware.prolog.AbstractQuery;
 import org.logicware.prolog.PrologEngine;
 import org.logicware.prolog.PrologQuery;
@@ -47,11 +49,11 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 
 	TuPrologQuery(PrologEngine engine, String query) {
 		super(engine);
+		tuProlog = engine.unwrap(TuPrologEngine.class).engine;
 		try {
-			tuProlog = engine.unwrap(TuPrologEngine.class).engine;
 			solution = tuProlog.solve("" + query + ".");
 		} catch (MalformedGoalException e) {
-			throw new SyntaxError(query, e);
+			LoggerUtils.error(getClass(), LoggerConstants.SYNTAX_ERROR, e);
 		}
 	}
 
@@ -312,9 +314,7 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 	}
 
 	public void dispose() {
-		if (solution != null) {
-			solution = null;
-		}
+		solution = null;
 	}
 
 	@Override

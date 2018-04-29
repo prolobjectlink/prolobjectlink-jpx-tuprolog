@@ -26,11 +26,12 @@ import java.util.List;
 import java.util.Set;
 
 import org.logicware.prolog.OperatorEntry;
+import org.logicware.prolog.PrologOperatorSet;
 
 import alice.tuprolog.Operator;
 import alice.tuprolog.Prolog;
 
-final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> {
+final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> implements PrologOperatorSet {
 
 	protected final Set<OperatorEntry> operators;
 	protected final List<Operator> operatorsList;
@@ -48,7 +49,7 @@ final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> {
 		}
 	}
 
-	protected boolean currentOp(String opreator) {
+	public boolean currentOp(String opreator) {
 		for (Operator op : operatorsList) {
 			if (op.name.equals(opreator)) {
 				return true;
@@ -71,8 +72,7 @@ final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((operators == null) ? 0 : operators.hashCode());
-		result = prime * result + ((operatorsList == null) ? 0 : operatorsList.hashCode());
+		result = prime * result + operators.hashCode();
 		return result;
 	}
 
@@ -85,17 +85,7 @@ final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> {
 		if (getClass() != obj.getClass())
 			return false;
 		TuPrologOperatorSet other = (TuPrologOperatorSet) obj;
-		if (operators == null) {
-			if (other.operators != null)
-				return false;
-		} else if (!operators.equals(other.operators))
-			return false;
-		if (operatorsList == null) {
-			if (other.operatorsList != null)
-				return false;
-		} else if (!operatorsList.equals(other.operatorsList))
-			return false;
-		return true;
+		return operators.equals(other.operators);
 	}
 
 }
