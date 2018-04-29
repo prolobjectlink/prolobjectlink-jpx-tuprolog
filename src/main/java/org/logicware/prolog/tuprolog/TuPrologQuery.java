@@ -283,6 +283,29 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 		return allVariablesSolution;
 	}
 
+	public List<Map<String, PrologTerm>> all() {
+		List<Map<String, PrologTerm>> allVariables = new ArrayList<Map<String, PrologTerm>>();
+
+		Map<String, PrologTerm> variables = oneVariablesSolution();
+		if (!variables.isEmpty()) {
+			allVariables.add(variables);
+		}
+
+		while (hasMoreSolutions()) {
+			try {
+				solution = tuProlog.solveNext();
+				variables = oneVariablesSolution();
+				if (!variables.isEmpty() && !contains(allVariables, variables)) {
+					allVariables.add(variables);
+				}
+			} catch (NoMoreSolutionException e) {
+				// do nothing
+			}
+		}
+
+		return allVariables;
+	}
+
 	@Override
 	public String toString() {
 		return "" + solution.getQuery() + "";
