@@ -42,6 +42,12 @@
 			<directory>${project.basedir}/etc</directory>
 			<outputDirectory>etc</outputDirectory>
 		</fileSet>
+		
+		<!-- logs folder -->
+		<fileSet>
+			<directory>${project.basedir}/log</directory>
+			<outputDirectory>log</outputDirectory>
+		</fileSet>
 
 		<!-- source code folder -->
 		<fileSet>
