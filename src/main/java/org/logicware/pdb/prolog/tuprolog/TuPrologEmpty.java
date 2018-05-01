@@ -17,37 +17,41 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.FALSE_TYPE;
+import org.logicware.pdb.prolog.PrologList;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import alice.tuprolog.Struct;
 
-import alice.tuprolog.Term;
+public class TuPrologEmpty extends TuPrologList implements PrologList {
 
-public final class TuPrologFalse extends TuPrologTerm implements PrologTerm {
-
-	protected TuPrologFalse(PrologProvider provider) {
-		super(FALSE_TYPE, provider, Term.FALSE);
+	TuPrologEmpty(PrologProvider provider) {
+		super(provider);
 	}
 
+	@Override
 	public PrologTerm[] getArguments() {
 		return new PrologTerm[0];
 	}
 
+	@Override
 	public int getArity() {
-		return 0;
+		return ((Struct) value).getArity();
 	}
 
+	@Override
 	public String getFunctor() {
-		return "" + value + "";
+		return ((Struct) value).getName();
 	}
 
+	@Override
 	public String getIndicator() {
 		return getFunctor() + "/" + getArity();
 	}
 
+	@Override
 	public boolean hasIndicator(String functor, int arity) {
 		return getFunctor().equals(functor) && getArity() == arity;
 	}

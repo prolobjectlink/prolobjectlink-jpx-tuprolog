@@ -17,26 +17,26 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.INTEGER_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.LONG_TYPE;
 
-import org.logicware.prolog.ArityError;
-import org.logicware.prolog.FunctorError;
-import org.logicware.prolog.IndicatorError;
-import org.logicware.prolog.PrologDouble;
-import org.logicware.prolog.PrologFloat;
-import org.logicware.prolog.PrologInteger;
-import org.logicware.prolog.PrologLong;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.ArityError;
+import org.logicware.pdb.prolog.FunctorError;
+import org.logicware.pdb.prolog.IndicatorError;
+import org.logicware.pdb.prolog.PrologDouble;
+import org.logicware.pdb.prolog.PrologFloat;
+import org.logicware.pdb.prolog.PrologInteger;
+import org.logicware.pdb.prolog.PrologLong;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
-import alice.tuprolog.Int;
+import alice.tuprolog.Long;
 
-public class TuPrologInteger extends TuPrologTerm implements PrologInteger {
+public class TuPrologLong extends TuPrologTerm implements PrologLong {
 
-	TuPrologInteger(PrologProvider provider, Number value) {
-		super(INTEGER_TYPE, provider, new Int(value.intValue()));
+	TuPrologLong(PrologProvider provider, Number value) {
+		super(LONG_TYPE, provider, new Long(value.longValue()));
 	}
 
 	public PrologInteger getPrologInteger() {
@@ -56,23 +56,23 @@ public class TuPrologInteger extends TuPrologTerm implements PrologInteger {
 	}
 
 	public long getLongValue() {
-		return ((Int) value).longValue();
+		return ((Long) value).longValue();
 	}
 
 	public double getDoubleValue() {
-		return ((Int) value).doubleValue();
+		return ((Long) value).doubleValue();
 	}
 
 	public int getIntValue() {
-		return ((Int) value).intValue();
+		return ((Long) value).intValue();
 	}
 
 	public float getFloatValue() {
-		return ((Int) value).floatValue();
+		return ((Long) value).floatValue();
 	}
 
 	public PrologTerm[] getArguments() {
-		return new TuPrologInteger[0];
+		return new TuPrologLong[0];
 	}
 
 	public int getArity() {

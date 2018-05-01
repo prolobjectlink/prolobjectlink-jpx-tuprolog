@@ -17,19 +17,19 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.TRUE_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.CUT_TYPE;
 
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
-import alice.tuprolog.Term;
+import alice.tuprolog.Struct;
 
-public final class TuPrologTrue extends TuPrologTerm implements PrologTerm {
+public class TuPrologCut extends TuPrologTerm implements PrologTerm {
 
-	TuPrologTrue(PrologProvider provider) {
-		super(TRUE_TYPE, provider, Term.TRUE);
+	TuPrologCut(PrologProvider provider) {
+		super(CUT_TYPE, provider, new Struct("!"));
 	}
 
 	public PrologTerm[] getArguments() {

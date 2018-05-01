@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -25,13 +25,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import org.logicware.logging.LoggerConstants;
-import org.logicware.logging.LoggerUtils;
-import org.logicware.prolog.AbstractQuery;
-import org.logicware.prolog.PrologEngine;
-import org.logicware.prolog.PrologQuery;
-import org.logicware.prolog.PrologTerm;
-import org.logicware.prolog.SyntaxError;
+import org.logicware.pdb.logging.LoggerConstants;
+import org.logicware.pdb.logging.LoggerUtils;
+import org.logicware.pdb.prolog.AbstractEngine;
+import org.logicware.pdb.prolog.AbstractQuery;
+import org.logicware.pdb.prolog.PrologQuery;
+import org.logicware.pdb.prolog.PrologTerm;
 
 import alice.tuprolog.MalformedGoalException;
 import alice.tuprolog.NoMoreSolutionException;
@@ -47,7 +46,7 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 	private SolveInfo solution;
 	private final Prolog tuProlog;
 
-	TuPrologQuery(PrologEngine engine, String query) {
+	TuPrologQuery(AbstractEngine engine, String query) {
 		super(engine);
 		tuProlog = engine.unwrap(TuPrologEngine.class).engine;
 		try {
@@ -57,7 +56,7 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 		}
 	}
 
-	TuPrologQuery(PrologEngine engine, PrologTerm[] terms) {
+	TuPrologQuery(AbstractEngine engine, PrologTerm[] terms) {
 		super(engine);
 		Term term = fromTerm(terms[terms.length - 1], Term.class);
 		for (int i = terms.length; i > 1; i--) {

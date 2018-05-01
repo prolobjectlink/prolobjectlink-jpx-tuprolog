@@ -17,26 +17,27 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.logicware.prolog.AbstractProvider;
-import org.logicware.prolog.PrologAtom;
-import org.logicware.prolog.PrologConverter;
-import org.logicware.prolog.PrologDouble;
-import org.logicware.prolog.PrologEngine;
-import org.logicware.prolog.PrologFloat;
-import org.logicware.prolog.PrologInteger;
-import org.logicware.prolog.PrologList;
-import org.logicware.prolog.PrologLong;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologStructure;
-import org.logicware.prolog.PrologTerm;
-import org.logicware.prolog.PrologVariable;
+import org.logicware.pdb.prolog.AbstractProvider;
+import org.logicware.pdb.prolog.PrologAtom;
+import org.logicware.pdb.prolog.PrologConverter;
+import org.logicware.pdb.prolog.PrologDouble;
+import org.logicware.pdb.prolog.PrologEngine;
+import org.logicware.pdb.prolog.PrologFloat;
+import org.logicware.pdb.prolog.PrologInteger;
+import org.logicware.pdb.prolog.PrologList;
+import org.logicware.pdb.prolog.PrologLong;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologStructure;
+import org.logicware.pdb.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologVariable;
 
 import alice.tuprolog.Parser;
+import alice.tuprolog.Prolog;
 import alice.tuprolog.Struct;
 import alice.tuprolog.Term;
 
@@ -81,7 +82,7 @@ public class TuPrologProvider extends AbstractProvider implements PrologProvider
 	// engine
 
 	public PrologEngine newEngine() {
-		return new TuPrologEngine(this);
+		return new TuPrologEngine(this, new Prolog());
 	}
 
 	// parser helpers

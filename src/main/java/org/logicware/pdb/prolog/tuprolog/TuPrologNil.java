@@ -17,32 +17,23 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.ATOM_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.NIL_TYPE;
 
-import org.logicware.prolog.PrologAtom;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
 import alice.tuprolog.Struct;
 
-public final class TuPrologAtom extends TuPrologTerm implements PrologAtom {
+public final class TuPrologNil extends TuPrologTerm implements PrologTerm {
 
-	TuPrologAtom(PrologProvider provider, String value) {
-		super(ATOM_TYPE, provider, new Struct(value));
-	}
-
-	public String getStringValue() {
-		return getFunctor();
-	}
-
-	public void setStringValue(String value) {
-		this.value = new Struct(value);
+	protected TuPrologNil(PrologProvider provider) {
+		super(NIL_TYPE, provider, new Struct("nil"));
 	}
 
 	public PrologTerm[] getArguments() {
-		return new TuPrologAtom[0];
+		return new PrologTerm[0];
 	}
 
 	public int getArity() {

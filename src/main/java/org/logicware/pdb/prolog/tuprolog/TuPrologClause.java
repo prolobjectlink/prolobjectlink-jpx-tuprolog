@@ -17,12 +17,12 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import org.logicware.prolog.AbstractClause;
-import org.logicware.prolog.PrologClause;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.AbstractClause;
+import org.logicware.pdb.prolog.PrologClause;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
 public final class TuPrologClause extends AbstractClause implements PrologClause {
 

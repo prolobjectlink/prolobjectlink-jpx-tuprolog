@@ -17,23 +17,32 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.FAIL_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.ATOM_TYPE;
 
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologAtom;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
 import alice.tuprolog.Struct;
 
-public final class TuPrologFail extends TuPrologTerm implements PrologTerm {
+public final class TuPrologAtom extends TuPrologTerm implements PrologAtom {
 
-	TuPrologFail(PrologProvider provider) {
-		super(FAIL_TYPE, provider, new Struct("fail"));
+	TuPrologAtom(PrologProvider provider, String value) {
+		super(ATOM_TYPE, provider, new Struct(value));
+	}
+
+	public String getStringValue() {
+		return getFunctor();
+	}
+
+	public void setStringValue(String value) {
+		this.value = new Struct(value);
 	}
 
 	public PrologTerm[] getArguments() {
-		return new PrologTerm[0];
+		return new TuPrologAtom[0];
 	}
 
 	public int getArity() {

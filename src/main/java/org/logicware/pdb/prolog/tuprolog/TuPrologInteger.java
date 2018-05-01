@@ -17,26 +17,26 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.DOUBLE_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.INTEGER_TYPE;
 
-import org.logicware.prolog.ArityError;
-import org.logicware.prolog.FunctorError;
-import org.logicware.prolog.IndicatorError;
-import org.logicware.prolog.PrologDouble;
-import org.logicware.prolog.PrologFloat;
-import org.logicware.prolog.PrologInteger;
-import org.logicware.prolog.PrologLong;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.ArityError;
+import org.logicware.pdb.prolog.FunctorError;
+import org.logicware.pdb.prolog.IndicatorError;
+import org.logicware.pdb.prolog.PrologDouble;
+import org.logicware.pdb.prolog.PrologFloat;
+import org.logicware.pdb.prolog.PrologInteger;
+import org.logicware.pdb.prolog.PrologLong;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
-import alice.tuprolog.Double;
+import alice.tuprolog.Int;
 
-public final class TuPrologDouble extends TuPrologTerm implements PrologDouble {
+public class TuPrologInteger extends TuPrologTerm implements PrologInteger {
 
-	TuPrologDouble(PrologProvider provider, Number value) {
-		super(DOUBLE_TYPE, provider, new Double(value.doubleValue()));
+	TuPrologInteger(PrologProvider provider, Number value) {
+		super(INTEGER_TYPE, provider, new Int(value.intValue()));
 	}
 
 	public PrologInteger getPrologInteger() {
@@ -56,23 +56,23 @@ public final class TuPrologDouble extends TuPrologTerm implements PrologDouble {
 	}
 
 	public long getLongValue() {
-		return ((Double) value).longValue();
+		return ((Int) value).longValue();
 	}
 
 	public double getDoubleValue() {
-		return ((Double) value).doubleValue();
+		return ((Int) value).doubleValue();
 	}
 
 	public int getIntValue() {
-		return ((Double) value).intValue();
+		return ((Int) value).intValue();
 	}
 
 	public float getFloatValue() {
-		return ((Double) value).floatValue();
+		return ((Int) value).floatValue();
 	}
 
 	public PrologTerm[] getArguments() {
-		return new TuPrologDouble[0];
+		return new TuPrologInteger[0];
 	}
 
 	public int getArity() {

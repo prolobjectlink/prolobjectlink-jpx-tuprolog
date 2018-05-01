@@ -17,15 +17,20 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import org.logicware.Settings;
-import org.logicware.prolog.PrologContainerFactory;
+import org.logicware.pdb.HierarchicalCache;
+import org.logicware.pdb.Settings;
+import org.logicware.pdb.prolog.PrologContainerFactory;
 
 public final class TuPrologContainerFactory extends PrologContainerFactory {
 
 	public TuPrologContainerFactory(Settings settings) {
 		super(settings, new TuPrologProvider());
+	}
+
+	public HierarchicalCache createHierarchicalCache() {
+		return new TuPrologHierarchicalCache(getProvider(), getSettings(), this);
 	}
 
 }

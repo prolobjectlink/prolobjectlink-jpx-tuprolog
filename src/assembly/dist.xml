@@ -24,7 +24,7 @@
 			<directory>${project.basedir}/bin</directory>
 			<outputDirectory>bin</outputDirectory>
 		</fileSet>
-
+		
 		<!-- root data folder -->
 		<fileSet>
 			<directory>${project.basedir}/dat</directory>
@@ -42,24 +42,17 @@
 			<directory>${project.basedir}/etc</directory>
 			<outputDirectory>etc</outputDirectory>
 		</fileSet>
-		
+
 		<!-- logs folder -->
 		<fileSet>
 			<directory>${project.basedir}/log</directory>
 			<outputDirectory>log</outputDirectory>
 		</fileSet>
 
-		<!-- source code folder -->
+		<!-- web folder -->
 		<fileSet>
-			<directory>${project.basedir}/src</directory>
-			<outputDirectory>src/src</outputDirectory>
-		</fileSet>
-		<fileSet>
-			<directory>${project.basedir}</directory>
-			<outputDirectory>/src</outputDirectory>
-			<includes>
-				<include>pom.xml</include>
-			</includes>
+			<directory>${project.basedir}/web</directory>
+			<outputDirectory>web</outputDirectory>
 		</fileSet>
 
 	</fileSets>

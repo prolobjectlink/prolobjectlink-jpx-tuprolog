@@ -17,12 +17,12 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.logging.LoggerConstants.DONT_WORRY;
-import static org.logicware.logging.LoggerConstants.FILE_NOT_FOUND;
-import static org.logicware.logging.LoggerConstants.IO_ERROR;
-import static org.logicware.logging.LoggerConstants.SYNTAX_ERROR;
+import static org.logicware.pdb.logging.LoggerConstants.DONT_WORRY;
+import static org.logicware.pdb.logging.LoggerConstants.FILE_NOT_FOUND;
+import static org.logicware.pdb.logging.LoggerConstants.IO;
+import static org.logicware.pdb.logging.LoggerConstants.SYNTAX_ERROR;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -35,19 +35,19 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 
-import org.logicware.logging.LoggerUtils;
-import org.logicware.prolog.AbstractEngine;
-import org.logicware.prolog.Licenses;
-import org.logicware.prolog.OperatorEntry;
-import org.logicware.prolog.PredicateIndicator;
-import org.logicware.prolog.PrologClause;
-import org.logicware.prolog.PrologEngine;
-import org.logicware.prolog.PrologIndicator;
-import org.logicware.prolog.PrologOperator;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologQuery;
-import org.logicware.prolog.PrologTerm;
-import org.logicware.prolog.SyntaxError;
+import org.logicware.pdb.Licenses;
+import org.logicware.pdb.logging.LoggerUtils;
+import org.logicware.pdb.prolog.AbstractEngine;
+import org.logicware.pdb.prolog.OperatorEntry;
+import org.logicware.pdb.prolog.PredicateIndicator;
+import org.logicware.pdb.prolog.PrologClause;
+import org.logicware.pdb.prolog.PrologEngine;
+import org.logicware.pdb.prolog.PrologIndicator;
+import org.logicware.pdb.prolog.PrologOperator;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologQuery;
+import org.logicware.pdb.prolog.PrologTerm;
+import org.logicware.pdb.prolog.SyntaxError;
 
 import alice.tuprolog.Int;
 import alice.tuprolog.InvalidTheoryException;
@@ -66,10 +66,6 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 
 	final Prolog engine;
 
-	protected TuPrologEngine(PrologProvider provider) {
-		this(provider, new Prolog());
-	}
-
 	protected TuPrologEngine(PrologProvider provider, Prolog engine) {
 		super(provider);
 		this.engine = engine;
@@ -83,7 +79,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			LoggerUtils.warn(getClass(), FILE_NOT_FOUND + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), IO_ERROR + path, e);
+			LoggerUtils.warn(getClass(), IO + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} catch (InvalidTheoryException e) {
 			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
@@ -96,7 +92,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 			writer = new FileWriter(path);
 			writer.write(engine.getTheoryManager().getTheory(true));
 		} catch (IOException e) {
-			LoggerUtils.warn(getClass(), IO_ERROR + path, e);
+			LoggerUtils.warn(getClass(), IO + path, e);
 			LoggerUtils.info(getClass(), DONT_WORRY + path);
 		} finally {
 			try {
@@ -104,7 +100,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 					writer.close();
 				}
 			} catch (IOException e) {
-				LoggerUtils.error(getClass(), IO_ERROR + path, e);
+				LoggerUtils.error(getClass(), IO + path, e);
 			}
 		}
 	}
@@ -116,7 +112,7 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 		} catch (FileNotFoundException e) {
 			LoggerUtils.error(getClass(), FILE_NOT_FOUND + path, e);
 		} catch (IOException e) {
-			LoggerUtils.error(getClass(), IO_ERROR + path, e);
+			LoggerUtils.error(getClass(), IO + path, e);
 		} catch (InvalidTheoryException e) {
 			LoggerUtils.error(getClass(), SYNTAX_ERROR + path, e);
 		}
@@ -240,7 +236,8 @@ public final class TuPrologEngine extends AbstractEngine implements PrologEngine
 	}
 
 	public boolean currentPredicate(String functor, int arity) {
-		PrologIndicator pi = new PredicateIndicator(functor, arity);
+		String newFunctor = removeQuoted(functor);
+		PrologIndicator pi = new PredicateIndicator(newFunctor, arity);
 		return currentPredicates().contains(pi);
 	}
 

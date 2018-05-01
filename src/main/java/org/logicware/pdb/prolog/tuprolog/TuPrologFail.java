@@ -17,19 +17,19 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.NIL_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.FAIL_TYPE;
 
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
 import alice.tuprolog.Struct;
 
-public final class TuPrologNil extends TuPrologTerm implements PrologTerm {
+public final class TuPrologFail extends TuPrologTerm implements PrologTerm {
 
-	protected TuPrologNil(PrologProvider provider) {
-		super(NIL_TYPE, provider, new Struct("nil"));
+	TuPrologFail(PrologProvider provider) {
+		super(FAIL_TYPE, provider, new Struct("fail"));
 	}
 
 	public PrologTerm[] getArguments() {

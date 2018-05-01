@@ -17,7 +17,7 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
 import java.util.AbstractSet;
 import java.util.HashSet;
@@ -25,8 +25,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.logicware.prolog.OperatorEntry;
-import org.logicware.prolog.PrologOperatorSet;
+import org.logicware.pdb.prolog.OperatorEntry;
+import org.logicware.pdb.prolog.PrologOperatorSet;
 
 import alice.tuprolog.Operator;
 import alice.tuprolog.Prolog;
@@ -82,10 +82,9 @@ final class TuPrologOperatorSet extends AbstractSet<OperatorEntry> implements Pr
 			return true;
 		if (!super.equals(obj))
 			return false;
-		if (getClass() != obj.getClass())
-			return false;
 		TuPrologOperatorSet other = (TuPrologOperatorSet) obj;
 		return operators.equals(other.operators);
+
 	}
 
 }

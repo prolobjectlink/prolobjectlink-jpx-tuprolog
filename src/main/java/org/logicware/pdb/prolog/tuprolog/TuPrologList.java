@@ -17,15 +17,15 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.prolog.tuprolog;
+package org.logicware.pdb.prolog.tuprolog;
 
-import static org.logicware.prolog.PrologTermType.LIST_TYPE;
+import static org.logicware.pdb.prolog.PrologTermType.LIST_TYPE;
 
 import java.util.Iterator;
 
-import org.logicware.prolog.PrologList;
-import org.logicware.prolog.PrologProvider;
-import org.logicware.prolog.PrologTerm;
+import org.logicware.pdb.prolog.PrologList;
+import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.pdb.prolog.PrologTerm;
 
 import alice.tuprolog.Struct;
 import alice.tuprolog.Term;
@@ -136,10 +136,6 @@ public class TuPrologList extends TuPrologTerm implements PrologList {
 
 		public PrologTerm next() {
 			return toTerm(i.next(), PrologTerm.class);
-		}
-
-		public void remove() {
-			i.remove();
 		}
 
 	}
