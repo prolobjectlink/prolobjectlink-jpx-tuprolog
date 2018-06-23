@@ -20,7 +20,6 @@
 package org.logicware.pdb.prolog.tuprolog;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -64,33 +63,6 @@ public class TuPrologQuery extends AbstractQuery implements PrologQuery {
 		}
 		tuProlog = engine.unwrap(TuPrologEngine.class).engine;
 		solution = tuProlog.solve(term);
-	}
-
-	protected boolean contains(List<Map<String, PrologTerm>> maps, Map<String, PrologTerm> map) {
-		for (Map<String, PrologTerm> m : maps) {
-			if (m.equals(map)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	protected boolean contains(Map<String, PrologTerm>[] maps, Map<String, PrologTerm> map) {
-		for (Map<String, PrologTerm> m : maps) {
-			if (m.equals(map)) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	protected boolean contains(List<PrologTerm[]> arrays, PrologTerm[] array) {
-		for (PrologTerm[] a : arrays) {
-			if (Arrays.equals(a, array)) {
-				return true;
-			}
-		}
-		return false;
 	}
 
 	public boolean hasSolution() {
