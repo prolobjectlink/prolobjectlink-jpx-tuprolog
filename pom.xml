@@ -71,6 +71,11 @@
 			<artifactId>tuprolog</artifactId>
 			<version>3.1</version>
 		</dependency>
+		<dependency>
+			<groupId>org.logicware</groupId>
+			<artifactId>prolobjectlink-jpi-tuprolog</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>

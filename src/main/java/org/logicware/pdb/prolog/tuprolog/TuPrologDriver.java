@@ -1,6 +1,6 @@
 /*
  * #%L
- * prolobjectlink-tuprolog
+ * prolobjectlink-jpi-tuprolog
  * %%
  * Copyright (C) 2012 - 2018 Logicware Project
  * %%
