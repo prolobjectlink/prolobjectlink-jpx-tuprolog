@@ -23,7 +23,7 @@ import org.logicware.pdb.ContainerFactory;
 import org.logicware.pdb.HierarchicalCache;
 import org.logicware.pdb.Settings;
 import org.logicware.pdb.prolog.PrologHierarchicalCache;
-import org.logicware.pdb.prolog.PrologProvider;
+import org.logicware.prolog.PrologProvider;
 
 public class TuPrologHierarchicalCache extends PrologHierarchicalCache implements HierarchicalCache {
 

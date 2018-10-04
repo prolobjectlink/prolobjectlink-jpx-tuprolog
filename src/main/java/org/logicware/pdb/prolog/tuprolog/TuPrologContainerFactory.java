@@ -22,6 +22,7 @@ package org.logicware.pdb.prolog.tuprolog;
 import org.logicware.pdb.HierarchicalCache;
 import org.logicware.pdb.Settings;
 import org.logicware.pdb.prolog.PrologContainerFactory;
+import org.logicware.prolog.tuprolog.TuPrologProvider;
 
 public final class TuPrologContainerFactory extends PrologContainerFactory {
 
