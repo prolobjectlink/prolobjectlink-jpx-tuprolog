@@ -22,12 +22,12 @@ package org.logicware.pdb.prolog.tuprolog;
 import org.logicware.pdb.HierarchicalCache;
 import org.logicware.pdb.Settings;
 import org.logicware.pdb.prolog.PrologContainerFactory;
-import org.logicware.prolog.tuprolog.TuPrologProvider;
+import org.logicware.prolog.tuprolog.TuProlog;
 
 public final class TuPrologContainerFactory extends PrologContainerFactory {
 
 	public TuPrologContainerFactory(Settings settings) {
-		super(settings, new TuPrologProvider());
+		super(settings, new TuProlog());
 	}
 
 	public HierarchicalCache createHierarchicalCache() {
