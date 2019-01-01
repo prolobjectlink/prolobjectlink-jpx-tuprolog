@@ -20,7 +20,7 @@
 package org.logicware.pdb.prolog.tuprolog;
 
 import org.logicware.database.HierarchicalCache;
-import org.logicware.database.Settings;
+import org.logicware.database.etc.Settings;
 import org.logicware.database.prolog.PrologContainerFactory;
 import org.logicware.prolog.tuprolog.TuProlog;
 
