@@ -17,13 +17,13 @@
  * limitations under the License.
  * #L%
  */
-package org.logicware.pdb.prolog.tuprolog;
+package org.worklogic.pdb.prolog.tuprolog;
 
-import org.logicware.db.ContainerFactory;
-import org.logicware.db.HierarchicalCache;
-import org.logicware.db.etc.Settings;
-import org.logicware.db.prolog.PrologHierarchicalCache;
 import org.logicware.prolog.PrologProvider;
+import org.worklogic.db.ContainerFactory;
+import org.worklogic.db.HierarchicalCache;
+import org.worklogic.db.etc.Settings;
+import org.worklogic.db.prolog.PrologHierarchicalCache;
 
 public class TuPrologHierarchicalCache extends PrologHierarchicalCache implements HierarchicalCache {
 
