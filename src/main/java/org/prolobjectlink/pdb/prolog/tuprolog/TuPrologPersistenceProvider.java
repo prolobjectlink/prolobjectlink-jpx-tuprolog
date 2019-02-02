@@ -17,9 +17,9 @@
  * limitations under the License.
  * #L%
  */
-package org.worklogic.pdb.prolog.tuprolog;
+package org.prolobjectlink.pdb.prolog.tuprolog;
 
-import static org.worklogic.db.XmlParser.XML;
+import static org.prolobjectlink.db.XmlParser.XML;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,22 +30,22 @@ import java.util.Properties;
 import javax.persistence.spi.PersistenceProvider;
 import javax.persistence.spi.PersistenceUnitInfo;
 
-import org.worklogic.db.DatabaseEngine;
-import org.worklogic.db.DatabaseSchema;
-import org.worklogic.db.DatabaseUser;
-import org.worklogic.db.Protocol;
-import org.worklogic.db.Schema;
-import org.worklogic.db.etc.Settings;
-import org.worklogic.db.jpa.JpaAbstractProvider;
-import org.worklogic.db.jpa.JpaEntityManagerFactory;
-import org.worklogic.db.jpa.JpaProperties;
-import org.worklogic.db.jpa.spi.JPAPersistenceXmlParser;
-import org.worklogic.db.memory.MemoryHierarchical;
-import org.worklogic.db.persistent.EmbeddedHierarchical;
-import org.worklogic.db.persistent.RemoteHierarchical;
-import org.worklogic.db.util.JavaReflect;
-import org.worklogic.logging.LoggerConstants;
-import org.worklogic.logging.LoggerUtils;
+import org.prolobjectlink.db.DatabaseEngine;
+import org.prolobjectlink.db.DatabaseSchema;
+import org.prolobjectlink.db.DatabaseUser;
+import org.prolobjectlink.db.Protocol;
+import org.prolobjectlink.db.Schema;
+import org.prolobjectlink.db.etc.Settings;
+import org.prolobjectlink.db.jpa.JpaAbstractProvider;
+import org.prolobjectlink.db.jpa.JpaEntityManagerFactory;
+import org.prolobjectlink.db.jpa.JpaProperties;
+import org.prolobjectlink.db.jpa.spi.JPAPersistenceXmlParser;
+import org.prolobjectlink.db.memory.MemoryHierarchical;
+import org.prolobjectlink.db.persistent.EmbeddedHierarchical;
+import org.prolobjectlink.db.persistent.RemoteHierarchical;
+import org.prolobjectlink.db.util.JavaReflect;
+import org.prolobjectlink.logging.LoggerConstants;
+import org.prolobjectlink.logging.LoggerUtils;
 
 public class TuPrologPersistenceProvider extends JpaAbstractProvider implements PersistenceProvider {
 
