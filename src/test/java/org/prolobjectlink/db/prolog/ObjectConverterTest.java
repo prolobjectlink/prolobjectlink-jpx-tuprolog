@@ -53,7 +53,7 @@ import org.prolobjectlink.prolog.tuprolog.TuProlog;
 public class ObjectConverterTest extends BaseTest {
 
 	protected static final Class<?> engine = TuProlog.class;
-	protected static final PrologProvider provider = Prolog.newProvider(engine);
+	protected static final PrologProvider provider = Prolog.getProvider(engine);
 	protected static final ObjectConverter<PrologTerm> converter = new PrologObjectConverter(provider);
 
 	@Test

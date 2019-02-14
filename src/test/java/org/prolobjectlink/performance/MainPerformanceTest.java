@@ -41,7 +41,7 @@ public class MainPerformanceTest {
 	// private static final String ROOT = "data" + File.separator + "test";
 
 	protected static final Class<? extends ContainerFactory> driver = TuPrologContainerFactory.class;
-	protected static final PrologProvider provider = Prolog.newProvider(TuProlog.class);
+	protected static final PrologProvider provider = Prolog.getProvider(TuProlog.class);
 
 	public MainPerformanceTest() {
 	}
