@@ -5,7 +5,7 @@
 	<groupId>org.prolobjectlink</groupId>
 	<artifactId>prolobjectlink-jpx-tuprolog</artifactId>
 	<version>1.0.0</version>
-	<name>prolobjectlink-tuprolog</name>
+	<name>prolobjectlink-jpx-tuprolog</name>
 	<description>prolobjectlink-tuprolog</description>
 
 	<url>https://github.com/prolobjectlink/${project.name}</url>
@@ -44,7 +44,7 @@
 		<developerConnection>scm:git:https://github.com/prolobjectlink/${project.name}.git</developerConnection>
 		<connection>scm:git:https://github.com/prolobjectlink/${project.name}.git</connection>
 		<url>https://github.com/prolobjectlink/${project.name}</url>
-		
+
 	</scm>
 
 	<ciManagement>
@@ -85,18 +85,23 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.prolobjectlink</groupId>
+			<artifactId>prolobjectlink-jpi-tuprolog</artifactId>
+			<version>[1.0.0, )</version>
+		</dependency>
+		<dependency>
+			<groupId>org.prolobjectlink</groupId>
 			<artifactId>prolobjectlink-jpp</artifactId>
 			<version>[1.0.0, )</version>
 		</dependency>
 		<dependency>
 			<groupId>org.prolobjectlink</groupId>
-			<artifactId>prolobjectlink-jpi-tuprolog</artifactId>
+			<artifactId>prolobjectlink-jpp-javax</artifactId>
 			<version>[1.0.0, )</version>
 		</dependency>
 		<dependency>
-			<groupId>it.unibo.alice.tuprolog</groupId>
-			<artifactId>tuprolog</artifactId>
-			<version>3.1</version>
+			<groupId>org.prolobjectlink</groupId>
+			<artifactId>prolobjectlink-jps-jetty</artifactId>
+			<version>[1.0.0, )</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

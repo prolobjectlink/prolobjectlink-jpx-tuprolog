@@ -1,6 +1,6 @@
 /*
  * #%L
- * prolobjectlink-tuprolog
+ * prolobjectlink-jpx-tuprolog
  * %%
  * Copyright (C) 2019 Prolobjectlink Project
  * %%
