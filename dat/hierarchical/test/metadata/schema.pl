@@ -52,5 +52,7 @@
 
 'org.prolobjectlink.db.prolog.PrologDatabaseView'('org.prolobjectlink.domain.geometry.view.SamePoint','','dat/hierarchical/test/views.pl','org.prolobjectlink.db.prolog.PrologArrayList'(3,['Idp','X','Y'])).
 
+'org.prolobjectlink.db.prolog.PrologDatabaseView'('org.prolobjectlink.domain.geometry.view.SamePoint','','dat/hierarchical/test/views.pl','org.prolobjectlink.db.prolog.PrologArrayList'(5,['$jacocoData','Idp','X','Y','$jacocoData'])).
+
 'org.logicware.prolog.PrologDatabaseView'('org.logicware.domain.geometry.view.SamePoint','','dat\hierarchical\test\views.pl','org.logicware.util.ArrayList'(3,['Idp','X','Y',nil,nil,nil,nil,nil,nil,nil])).
 

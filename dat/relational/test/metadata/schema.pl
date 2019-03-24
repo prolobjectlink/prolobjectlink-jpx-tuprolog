@@ -52,5 +52,7 @@
 
 'org.prolobjectlink.db.prolog.PrologDatabaseView'('org.prolobjectlink.domain.model.view.AnEmployeeView','','dat/relational/test/views.pl','org.prolobjectlink.db.prolog.PrologArrayList'(14,['Salary','Department','Id','FirstName','MiddleName','LastName','Address','Phones','Emails','NickNames','BirthDate','JoinDate','LastLoginDate','LoginCount'])).
 
+'org.prolobjectlink.db.prolog.PrologDatabaseView'('org.prolobjectlink.domain.model.view.AnEmployeeView','','dat/relational/test/views.pl','org.prolobjectlink.db.prolog.PrologArrayList'(17,['$jacocoData','Salary','Department','$jacocoData','Id','FirstName','MiddleName','LastName','Address','Phones','Emails','NickNames','BirthDate','JoinDate','LastLoginDate','LoginCount','$jacocoData'])).
+
 'org.logicware.prolog.PrologDatabaseView'('org.logicware.domain.model.view.AnEmployeeView','','dat\relational\test\views.pl','org.logicware.util.ArrayList'(14,['Salary','Department','Id','FirstName','MiddleName','LastName','Address','Phones','Emails','NickNames','BirthDate','JoinDate','LastLoginDate','LoginCount',nil,nil,nil,nil,nil,nil])).
 
