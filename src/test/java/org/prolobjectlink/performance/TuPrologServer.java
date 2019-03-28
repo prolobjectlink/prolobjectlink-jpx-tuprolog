@@ -25,7 +25,7 @@ import org.prolobjectlink.db.DatabaseServer;
 import org.prolobjectlink.db.DatabaseUser;
 import org.prolobjectlink.db.etc.Settings;
 import org.prolobjectlink.db.persistent.RemoteDatabaseServer;
-import org.prolobjectlink.pdb.prolog.tuprolog.TuPrologContainerFactory;
+import org.prolobjectlink.db.prolog.tuprolog.TuPrologContainerFactory;
 
 public class TuPrologServer {
 

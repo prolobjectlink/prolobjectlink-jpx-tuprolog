@@ -27,9 +27,9 @@ import org.prolobjectlink.db.ContainerFactory;
 import org.prolobjectlink.db.StorageManager;
 import org.prolobjectlink.db.StorageMode;
 import org.prolobjectlink.db.etc.Settings;
+import org.prolobjectlink.db.prolog.tuprolog.TuPrologContainerFactory;
 import org.prolobjectlink.domain.geometry.Point;
 import org.prolobjectlink.logging.LoggerUtils;
-import org.prolobjectlink.pdb.prolog.tuprolog.TuPrologContainerFactory;
 
 public class StoragePoolTest {
 

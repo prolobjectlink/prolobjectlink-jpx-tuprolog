@@ -243,7 +243,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<mainClass>
-								org.prolobjectlink.pdb.prolog.tuprolog.TuPrologDatabaseConsole
+								org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole
 							</mainClass>
 						</manifest>
 						<manifestEntries>

@@ -27,7 +27,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.prolobjectlink.BaseTest;
-import org.prolobjectlink.pdb.prolog.tuprolog.TuPrologPersistenceProvider;
+import org.prolobjectlink.db.prolog.tuprolog.TuPrologPersistenceProvider;
 
 public class TuPrologPersistenceProviderTest extends BaseTest {
 

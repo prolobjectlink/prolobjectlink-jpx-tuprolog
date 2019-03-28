@@ -19,7 +19,7 @@
  * <http://www.gnu.org/licenses/lgpl-2.1.html>.
  * #L%
  */
-package org.prolobjectlink.pdb.prolog.tuprolog;
+package org.prolobjectlink.db.prolog.tuprolog;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

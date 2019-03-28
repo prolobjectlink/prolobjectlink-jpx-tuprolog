@@ -19,21 +19,18 @@
  * <http://www.gnu.org/licenses/lgpl-2.1.html>.
  * #L%
  */
-package org.prolobjectlink.pdb.prolog.tuprolog;
+package org.prolobjectlink.db.prolog.tuprolog;
 
+import org.prolobjectlink.db.ContainerFactory;
 import org.prolobjectlink.db.HierarchicalCache;
 import org.prolobjectlink.db.etc.Settings;
-import org.prolobjectlink.db.prolog.PrologContainerFactory;
-import org.prolobjectlink.prolog.tuprolog.TuProlog;
+import org.prolobjectlink.db.prolog.PrologHierarchicalCache;
+import org.prolobjectlink.prolog.PrologProvider;
 
-public final class TuPrologContainerFactory extends PrologContainerFactory {
+public class TuPrologHierarchicalCache extends PrologHierarchicalCache implements HierarchicalCache {
 
-	public TuPrologContainerFactory(Settings settings) {
-		super(settings, new TuProlog());
-	}
-
-	public HierarchicalCache createHierarchicalCache() {
-		return new TuPrologHierarchicalCache(getProvider(), getSettings(), this);
+	public TuPrologHierarchicalCache(PrologProvider provider, Settings settings, ContainerFactory containerFactory) {
+		super(provider, settings, new TuPrologContainerFactory(settings));
 	}
 
 }

@@ -36,7 +36,7 @@ import java.util.Properties;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.prolobjectlink.pdb.prolog.tuprolog.TuPrologDatabaseConsole;
+import org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole;
 
 public class DatabaseBinaryTest extends BaseTest {
 
