@@ -27,8 +27,6 @@ import java.net.URL;
 
 import org.junit.Test;
 import org.prolobjectlink.BaseTest;
-import org.prolobjectlink.db.rempdb.Handler;
-import org.prolobjectlink.db.rempdb.RemoteURLConnection;
 
 public class HandlerTest extends BaseTest {
 

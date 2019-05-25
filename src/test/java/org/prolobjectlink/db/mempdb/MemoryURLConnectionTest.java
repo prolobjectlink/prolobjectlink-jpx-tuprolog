@@ -23,7 +23,6 @@ import java.io.IOException;
 
 import org.junit.Test;
 import org.prolobjectlink.BaseTest;
-import org.prolobjectlink.db.mempdb.MemoryURLConnection;
 
 public class MemoryURLConnectionTest extends BaseTest {
 

@@ -23,7 +23,6 @@ import java.io.IOException;
 
 import org.junit.Test;
 import org.prolobjectlink.BaseTest;
-import org.prolobjectlink.db.rempdb.RemoteURLConnection;
 
 public class RemoteURLConnectionTest extends BaseTest {
 

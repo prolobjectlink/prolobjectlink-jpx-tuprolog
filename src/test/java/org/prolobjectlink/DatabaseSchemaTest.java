@@ -26,9 +26,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.io.File;
 
-import org.junit.Ignore;
 import org.junit.Test;
-import org.prolobjectlink.GraphEdge;
 import org.prolobjectlink.db.DatabaseClass;
 import org.prolobjectlink.db.DatabaseFunction;
 import org.prolobjectlink.db.DatabaseSequence;
@@ -394,7 +392,7 @@ public class DatabaseSchemaTest extends BaseTest {
 		assertEquals(4, hg.countVertices());
 
 		for (GraphEdge<DatabaseClass> edge : hschema.getGraph().getEdges()) {
-			System.out.println(edge);
+			System.out.println(edge.getFrom() + "--->" + edge.getTo());
 		}
 
 		RelationalGraph<DatabaseClass, DatabaseClass> rg = rschema.getGraph();
