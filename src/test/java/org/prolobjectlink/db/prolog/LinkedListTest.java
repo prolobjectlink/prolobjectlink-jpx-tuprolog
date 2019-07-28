@@ -11,8 +11,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.ListIterator;
 
+import org.junit.Ignore;
 import org.junit.Test;
 
+@Ignore
 public class LinkedListTest extends CollectionTest {
 
 	private PrologLinkedList<Integer> list = new PrologLinkedList<Integer>(
