@@ -54,6 +54,7 @@ import org.prolobjectlink.db.jpa.criteria.JpaObject;
 import org.prolobjectlink.db.jpa.spi.JPAPersistenceSchemaVersion;
 import org.prolobjectlink.db.jpa.spi.JPAPersistenceVersion;
 import org.prolobjectlink.db.prolog.tuprolog.TuPrologContainerFactory;
+import org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseProvider;
 import org.prolobjectlink.db.savepoint.SavePointManager;
 import org.prolobjectlink.domain.geometry.Point;
 import org.prolobjectlink.domain.geometry.Polygon;
@@ -125,7 +126,7 @@ public abstract class BaseTest {
 	protected final Map<String, Object> properties = new HashMap<String, Object>(5);
 
 	protected static final Class<? extends ContainerFactory> driver = TuPrologContainerFactory.class;
-	protected static final PrologProvider provider = Prolog.getProvider(TuProlog.class);
+	protected static final PrologProvider provider = Prolog.getProvider(TuPrologDatabaseProvider.class);
 
 	protected static final PrologInteger zero = provider.newInteger(0);
 	protected static final PrologInteger one = provider.newInteger(1);

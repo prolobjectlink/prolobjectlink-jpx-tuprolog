@@ -1,8 +1,8 @@
-/*
+/*-
  * #%L
  * prolobjectlink-jpx-tuprolog
  * %%
- * Copyright (C) 2019 Prolobjectlink Project
+ * Copyright (C) 2012 - 2019 Prolobjectlink Project
  * %%
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,20 +17,30 @@
  * limitations under the License.
  * #L%
  */
-package org.prolobjectlink.db.prolog.tuprolog;
+package org.prolobjectlink.web.application;
 
-import org.prolobjectlink.db.HierarchicalCache;
-import org.prolobjectlink.db.etc.Settings;
-import org.prolobjectlink.db.prolog.PrologContainerFactory;
+import static org.junit.Assert.assertEquals;
 
-public final class TuPrologContainerFactory extends PrologContainerFactory {
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.prolobjectlink.BaseTest;
 
-	public TuPrologContainerFactory(Settings settings) {
-		super(settings, new TuPrologDatabaseProvider());
+public class ControllerGeneratorTest extends BaseTest {
+
+	private ControllerGenerator generator = new UndertowControllerGenerator(provider);
+
+	@Before
+	public void setUp() throws Exception {
 	}
 
-	public HierarchicalCache createHierarchicalCache() {
-		return new TuPrologHierarchicalCache(getProvider(), getSettings(), this);
+	@After
+	public void tearDown() throws Exception {
+	}
+
+	@Test
+	public void testGetServlets() {
+		assertEquals(18, generator.getMappings().size());
 	}
 
 }
