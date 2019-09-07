@@ -79,6 +79,12 @@
 			<outputDirectory>log</outputDirectory>
 		</fileSet>
 
+		<!-- misc folder -->
+		<fileSet>
+			<directory>${project.basedir}/misc</directory>
+			<outputDirectory>misc</outputDirectory>
+		</fileSet>
+
 		<!-- web folder -->
 		<fileSet>
 			<directory>${project.basedir}/web</directory>
