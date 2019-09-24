@@ -36,7 +36,7 @@ public final class TuPrologProgrammer extends AbstractProgrammer implements Prol
 		super(provider);
 	}
 
-	public void codingObjInclusion(PrintWriter programmer, String jarEntryName) {
+	public void codingInclusion(PrintWriter programmer, String jarEntryName) {
 		// TODO Find the absolute path for harness.
 		StringBuilder b = new StringBuilder();
 		for (int i = 0; i < jarEntryName.lastIndexOf('/'); i++) {
@@ -49,14 +49,14 @@ public final class TuPrologProgrammer extends AbstractProgrammer implements Prol
 		programmer.println();
 	}
 
-	public void codingDaoInclusion(PrintWriter programmer, String jarEntryName, String dao) {
+	public void codingInclusion(PrintWriter programmer, String jarEntryName, String dao) {
 		StringBuilder b = new StringBuilder();
 		for (int i = 0; i < jarEntryName.lastIndexOf('/'); i++) {
 			if (jarEntryName.charAt(i) == '/') {
 				b.append("../");
 			}
 		}
-		b.append("../../web/" + dao);
+		b.append("../../" + dao);
 		programmer.println(":-" + provider.prologInclude("" + b + "") + ".");
 		programmer.println();
 	}
