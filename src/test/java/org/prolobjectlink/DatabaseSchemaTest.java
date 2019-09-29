@@ -1,4 +1,4 @@
-/*
+/*-
  * #%L
  * prolobjectlink-jpx-tuprolog
  * %%
@@ -374,7 +374,7 @@ public class DatabaseSchemaTest extends BaseTest {
 
 	@Test
 	public void testGetLocation() {
-		assertEquals("dat" + File.separator + "relational" + File.separator + "test" + File.separator + "database",
+		assertEquals("db/pdb/relational" + File.separator + "test" + File.separator + "database",
 				rdb.getLocation());
 	}
 
@@ -392,7 +392,7 @@ public class DatabaseSchemaTest extends BaseTest {
 		assertEquals(4, hg.countVertices());
 
 		for (GraphEdge<DatabaseClass> edge : hschema.getGraph().getEdges()) {
-			System.out.println(edge.getFrom() + "--->" + edge.getTo());
+			System.out.println(edge);
 		}
 
 		RelationalGraph<DatabaseClass, DatabaseClass> rg = rschema.getGraph();
