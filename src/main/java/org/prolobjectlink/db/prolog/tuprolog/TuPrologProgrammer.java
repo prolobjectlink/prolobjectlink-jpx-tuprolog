@@ -21,16 +21,16 @@ package org.prolobjectlink.db.prolog.tuprolog;
 
 import java.io.PrintWriter;
 
-import org.prolobjectlink.db.prolog.AbstractProgrammer;
 import org.prolobjectlink.db.prolog.PrologProgrammer;
 import org.prolobjectlink.prolog.PrologProvider;
+import org.prolobjectlink.web.application.AbstractViewProgrammer;
 
 /**
  * 
  * @author Jose Zalacain
  * @since 1.0
  */
-public final class TuPrologProgrammer extends AbstractProgrammer implements PrologProgrammer {
+public final class TuPrologProgrammer extends AbstractViewProgrammer implements PrologProgrammer {
 
 	public TuPrologProgrammer(PrologProvider provider) {
 		super(provider);
