@@ -40,7 +40,7 @@ public class ControllerGeneratorTest extends BaseTest {
 
 	@Test
 	public void testGetServlets() {
-		assertEquals(18, generator.getMappings().size());
+		assertEquals(66, generator.getMappings().size());
 	}
 
 }
