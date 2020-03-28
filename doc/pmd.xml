@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2020-03-27T11:51:55.244">
+<pmd version="4.2.5" timestamp="2020-03-28T11:36:00.415">
 <file name="C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpx-tuprolog\src\main\java\org\prolobjectlink\db\prolog\tuprolog\TuPrologDatabaseConsole.java">
 <violation beginline="27" endline="27" begincolumn="1" endcolumn="64" rule="UnusedImports" ruleset="Import Statement Rules" package="org.prolobjectlink.db.prolog.tuprolog" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'org.prolobjectlink.db.platform.linux.LinuxDatabaseServer'
