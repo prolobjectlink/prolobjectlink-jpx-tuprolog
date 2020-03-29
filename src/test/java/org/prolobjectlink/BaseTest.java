@@ -67,10 +67,11 @@ import org.prolobjectlink.domain.model.Employee;
 import org.prolobjectlink.domain.model.Person;
 import org.prolobjectlink.domain.model.view.AnEmployeeView;
 import org.prolobjectlink.graph.DirectedGraph;
-import org.prolobjectlink.prolog.Prolog;
-import org.prolobjectlink.prolog.PrologInteger;
-import org.prolobjectlink.prolog.PrologProvider;
-import org.prolobjectlink.prolog.tuprolog.TuProlog;
+
+import io.github.prolobjectlink.prolog.Prolog;
+import io.github.prolobjectlink.prolog.PrologInteger;
+import io.github.prolobjectlink.prolog.PrologProvider;
+import io.github.prolobjectlink.prolog.tuprolog.TuProlog;
 
 /**
  * 

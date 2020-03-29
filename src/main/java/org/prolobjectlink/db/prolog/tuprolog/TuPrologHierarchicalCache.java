@@ -23,7 +23,8 @@ import org.prolobjectlink.db.ContainerFactory;
 import org.prolobjectlink.db.HierarchicalCache;
 import org.prolobjectlink.db.etc.Settings;
 import org.prolobjectlink.db.prolog.PrologHierarchicalCache;
-import org.prolobjectlink.prolog.PrologProvider;
+
+import io.github.prolobjectlink.prolog.PrologProvider;
 
 public class TuPrologHierarchicalCache extends PrologHierarchicalCache implements HierarchicalCache {
 

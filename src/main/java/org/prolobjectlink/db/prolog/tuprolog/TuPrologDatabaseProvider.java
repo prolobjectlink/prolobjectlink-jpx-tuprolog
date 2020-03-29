@@ -21,9 +21,9 @@ package org.prolobjectlink.db.prolog.tuprolog;
 
 import org.prolobjectlink.db.prolog.PrologDatabaseEngine;
 import org.prolobjectlink.db.prolog.PrologDatabaseProvider;
-import org.prolobjectlink.prolog.tuprolog.TuProlog;
 
 import alice.tuprolog.Prolog;
+import io.github.prolobjectlink.prolog.tuprolog.TuProlog;
 
 public class TuPrologDatabaseProvider extends TuProlog implements PrologDatabaseProvider {
 
