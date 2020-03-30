@@ -201,7 +201,7 @@
 							<goal>pdf</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.basedir}/doc</outputDirectory>
+							<outputDirectory>${project.basedir}/docs</outputDirectory>
 						</configuration>
 					</execution>
 				</executions>
@@ -436,7 +436,7 @@
 
 	<reporting>
 		<excludeDefaults>true</excludeDefaults>
-		<outputDirectory>${project.basedir}/doc</outputDirectory>
+		<outputDirectory>${project.basedir}/docs</outputDirectory>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
