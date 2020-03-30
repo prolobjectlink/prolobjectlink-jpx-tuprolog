@@ -3,19 +3,19 @@
 <rss version="0.91">
   <channel>
     <title>prolobjectlink-jpx-tuprolog - Checkstyle report</title>
-    <link>https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog</link>
+    <link>https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog</link>
     <description>prolobjectlink-jpx-tuprolog - Checkstyle report</description>
     <language>en-us</language>
-    <copyright>&#169;2012 - 2020 Prolobjectlink Project</copyright>
+    <copyright>&#169;2020 Prolobjectlink Project</copyright>
     <item>
       <title>File: 7,
              Errors: 256,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html</link>
+            <link>https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html</link>
       <description>
-        <p>Click <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologPersistenceProvider.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologPersistenceProvider.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologPersistenceProvider.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologPersistenceProvider.java</a>
                 </td>
                 <td>
                   0
@@ -43,7 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologContainerFactory.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologContainerFactory.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologContainerFactory.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologContainerFactory.java</a>
                 </td>
                 <td>
                   0
@@ -57,7 +57,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseConsole.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseConsole.java</a>
                 </td>
                 <td>
                   0
@@ -71,7 +71,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologProgrammer.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologProgrammer.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologProgrammer.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologProgrammer.java</a>
                 </td>
                 <td>
                   0
@@ -85,7 +85,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseProvider.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseProvider.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseProvider.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseProvider.java</a>
                 </td>
                 <td>
                   0
@@ -99,7 +99,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseEngine.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseEngine.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseEngine.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologDatabaseEngine.java</a>
                 </td>
                 <td>
                   0
@@ -113,7 +113,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="https://github.com/prolobjectlink/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologHierarchicalCache.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologHierarchicalCache.java</a>
+                  <a href="https://prolobjectlink.github.io/prolobjectlink-jpx-tuprolog/checkstyle.html#org.prolobjectlink.db.prolog.tuprolog.TuPrologHierarchicalCache.java">org/prolobjectlink/db/prolog/tuprolog/TuPrologHierarchicalCache.java</a>
                 </td>
                 <td>
                   0
