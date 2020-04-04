@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2020-04-01T19:01:37.957">
-<file name="C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpx-tuprolog\src\main\java\org\prolobjectlink\db\prolog\tuprolog\TuPrologDatabaseConsole.java">
-<violation beginline="27" endline="27" begincolumn="1" endcolumn="64" rule="UnusedImports" ruleset="Import Statement Rules" package="org.prolobjectlink.db.prolog.tuprolog" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'org.prolobjectlink.db.platform.linux.LinuxDatabaseServer'
-</violation>
-<violation beginline="28" endline="28" begincolumn="1" endcolumn="66" rule="UnusedImports" ruleset="Import Statement Rules" package="org.prolobjectlink.db.prolog.tuprolog" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'org.prolobjectlink.db.platform.macosx.MacosxDatabaseServer'
-</violation>
-<violation beginline="29" endline="29" begincolumn="1" endcolumn="64" rule="UnusedImports" ruleset="Import Statement Rules" package="org.prolobjectlink.db.prolog.tuprolog" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
-Avoid unused imports such as 'org.prolobjectlink.db.platform.win32.Win32DatabaseServer'
-</violation>
-</file>
+<pmd version="4.2.5" timestamp="2020-04-14T07:06:35.914">
 <file name="C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpx-tuprolog\src\main\java\org\prolobjectlink\db\prolog\tuprolog\TuPrologHierarchicalCache.java">
-<violation beginline="31" endline="33" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.prolobjectlink.db.prolog.tuprolog" class="TuPrologHierarchicalCache" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+<violation beginline="33" endline="35" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.prolobjectlink.db.prolog.tuprolog" class="TuPrologHierarchicalCache" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
 Avoid unused constructor parameters such as 'containerFactory'.
 </violation>
 </file>
