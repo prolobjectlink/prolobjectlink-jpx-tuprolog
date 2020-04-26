@@ -24,8 +24,8 @@ package io.github.prolobjectlink.db.mempdb;
 import java.io.IOException;
 
 import org.junit.Test;
-import org.prolobjectlink.BaseTest;
 
+import io.github.prolobjectlink.BaseTest;
 import io.github.prolobjectlink.db.mempdb.MemoryURLConnection;
 
 public class MemoryURLConnectionTest extends BaseTest {

@@ -28,8 +28,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.junit.Test;
-import org.prolobjectlink.BaseTest;
 
+import io.github.prolobjectlink.BaseTest;
 import io.github.prolobjectlink.db.rempdb.Handler;
 import io.github.prolobjectlink.db.rempdb.RemoteURLConnection;
 

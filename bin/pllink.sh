@@ -22,4 +22,4 @@
 ## #L%
 ###
 
-java -classpath "$(dirname "$(pwd)")/lib/*" org.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole ${1+"$@"}
+java -classpath "$(dirname "$(pwd)")/lib/*" io.github.prolobjectlink.db.prolog.tuprolog.TuPrologDatabaseConsole ${1+"$@"}

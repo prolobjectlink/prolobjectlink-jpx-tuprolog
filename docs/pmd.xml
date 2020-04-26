@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2020-04-14T07:06:35.914">
-<file name="C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpx-tuprolog\src\main\java\org\prolobjectlink\db\prolog\tuprolog\TuPrologHierarchicalCache.java">
-<violation beginline="33" endline="35" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="org.prolobjectlink.db.prolog.tuprolog" class="TuPrologHierarchicalCache" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+<pmd version="4.2.5" timestamp="2020-05-31T11:38:02.036">
+<file name="C:\Users\Jose Zalacain\Documents\eclipse-java-photon-workspace\prolobjectlink-jpx-tuprolog\src\main\java\io\github\prolobjectlink\db\prolog\tuprolog\TuPrologHierarchicalCache.java">
+<violation beginline="32" endline="34" begincolumn="16" endcolumn="9" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="io.github.prolobjectlink.db.prolog.tuprolog" class="TuPrologHierarchicalCache" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
 Avoid unused constructor parameters such as 'containerFactory'.
 </violation>
 </file>

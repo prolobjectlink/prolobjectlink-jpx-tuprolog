@@ -24,8 +24,8 @@ package io.github.prolobjectlink.db.rempdb;
 import java.io.IOException;
 
 import org.junit.Test;
-import org.prolobjectlink.BaseTest;
 
+import io.github.prolobjectlink.BaseTest;
 import io.github.prolobjectlink.db.rempdb.RemoteURLConnection;
 
 public class RemoteURLConnectionTest extends BaseTest {
